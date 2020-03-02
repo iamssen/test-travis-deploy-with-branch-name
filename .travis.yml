@@ -21,26 +21,10 @@ deploy:
     token: $GITHUB_TOKEN
     keep_history: true
     local_dir: ./dist/app/browser
-    target_branch: dist/release
-    on:
-      branch: master
-  - provider: pages
-    skip_cleanup: true
-    token: $GITHUB_TOKEN
-    keep_history: true
-    local_dir: ./dist/app/browser
-    target_branch: dist/staging
-    on:
-      branch: develop
-  - provider: pages
-    skip_cleanup: true
-    token: $GITHUB_TOKEN
-    keep_history: true
-    local_dir: ./dist/app/browser
     target_branch: dist/$TRAVIS_BRANCH
     on:
       all_branches: true
-      condition: $TRAVIS_BRANCH =~ ^(feature|release)
+      condition: $TRAVIS_BRANCH =~ ^(master|develop|feature|release)
 notifications:
   email:
     on_success: never
