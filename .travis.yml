@@ -41,7 +41,7 @@ deploy:
     target_branch: dist/$TRAVIS_BRANCH
     on:
       all_branches: true
-      condition: $TRAVIS_BRANCH =~ ^(feature|release)$
+      condition: $TRAVIS_BRANCH =~ ^(feature|release)
 notifications:
   email:
     on_success: never
