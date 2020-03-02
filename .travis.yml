@@ -15,7 +15,6 @@ script:
   - npm run test
 after_success:
   - npm run build
-  - npm run storybook:build
 deploy:
   - provider: pages
     skip_cleanup: true
